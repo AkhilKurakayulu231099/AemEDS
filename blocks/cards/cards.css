@@ -1,33 +1,61 @@
-.cards > div {
-  display: flex;
-  flex-direction: column;
+.cards details {
+  border: 1px solid #dadada;
 }
 
-.cards img {
-  width: 100%;
+/* stylelint-disable-next-line no-descending-specificity */
+.cards details + details {
+  margin-top: 24px;
 }
 
-.cards > div > div {
-  order: 1;
+.cards details p {
+  margin-bottom: 0.8em;
 }
 
-.cards > div > .cards-img-col {
-  order: 0;
+.cards details summary {
+  position: relative;
+  padding: 0 16px;
+  padding-right: 46px;
+  cursor: pointer;
+  list-style: none;
+  overflow: auto;
+  transition: background-color 0.2s;
 }
 
-.cards > div > .cards-img-col img {
-  display: block;
+.cards details[open] summary {
+  background-color: var(--light-color);
 }
 
-@media (width >= 900px) {
-  .cards > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
-  }
+.cards details summary:focus,
+.cards details summary:hover {
+  background-color: var(--light-color);
+}
 
-  .cards > div > div {
-    flex: 1;
-    order: unset;
-  }
+.cards details summary::-webkit-details-marker {
+  display: none;
+}
+
+.cards details summary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%) rotate(135deg);
+  width: 6px;
+  height: 6px;
+  border: 2px solid;
+  border-width: 2px 2px 0 0;
+  transition: transform 0.2s;
+}
+
+.cards details[open] summary::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.cards details .cards-item-body {
+  padding: 0 16px;
+}
+
+.cards details[open] .cards-item-body {
+  border-top: 1px solid #dadada;
+  background-color: var(--background-color);
 }

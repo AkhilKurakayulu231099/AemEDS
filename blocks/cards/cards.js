@@ -1,18 +1,23 @@
-export default function decorate(block) {
-  const cols = [...block.firstElementChild.children];
-  block.classList.add(`cards-${cols.length}-cols`);
+/*
+ * Accordion Block
+ * Recreate an accordion
+ * https://www.hlx.live/developer/block-collection/accordion
+ */
 
-  // setup image columns
+export default function decorate(block) {
   [...block.children].forEach((row) => {
-    [...row.children].forEach((col) => {
-      const pic = col.querySelector('picture');
-      if (pic) {
-        const picWrapper = pic.closest('div');
-        if (picWrapper && picWrapper.children.length === 1) {
-          // picture is only content in column
-          picWrapper.classList.add('cards-img-col');
-        }
-      }
-    });
+    // decorate accordion item label
+    const label = row.children[0];
+    const summary = document.createElement('summary');
+    summary.className = 'cards-item-label';
+    summary.append(...label.childNodes);
+    // decorate accordion item body
+    const body = row.children[1];
+    body.className = 'cards-item-body';
+    // decorate accordion item
+    const details = document.createElement('details');
+    details.className = 'cards-item';
+    details.append(summary, body);
+    row.replaceWith(details);
   });
 }
