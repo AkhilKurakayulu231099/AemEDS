@@ -7,9 +7,6 @@
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
   grid-gap: 24px; /* Space between the cards */
 }
-.evidentcards-wrapper{
-    padding: 20px;
-}
 /* Styling for each individual card */
 .evidentcards > ul > li {
   border: 1px solid #dadada;
@@ -103,7 +100,7 @@
 .evidentcards {
   width: 100%; /* Full width */
   max-width: 1270px; /* Set a max-width for larger screens */
-  padding: 0 15px;
+  padding: 20px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
