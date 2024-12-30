@@ -1,57 +1,62 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 export default function decorate(block) {
-  // Find all the evidentcard items inside the block
+  // Create a new <ul> element to hold the list of cards
   const ul = document.createElement('ul');
 
-  // Loop through each item (evidentcard) inside the block
-  [...block.children].forEach((card) => {
+  // Find the evidentcards block and iterate through each of its children
+  const evidentCards = block.querySelectorAll('.evidentcards-wrapper > .evidentcards > div');
+
+  evidentCards.forEach((card) => {
     const li = document.createElement('li');
     
-    // Move the children of each card into the new <li>
-    moveInstrumentation(card, li);
+    // Loop through the child div elements of each card and move them into the <li>
+    [...card.children].forEach((div) => {
+      li.appendChild(div);
 
-    while (card.firstElementChild) {
-      const div = card.firstElementChild;
-      li.append(div);
-
-      // Apply classes to each div based on its content
+      // Apply classes based on the type of content inside each div
       if (div.querySelector('picture')) {
         div.className = 'evidentcard-image';  // Class for the image container
-      } else if (div.querySelector('p')) {
+      } else if (div.querySelector('a')) {
         div.className = 'evidentcard-body';  // Class for the body containing the link
       } else {
         div.className = 'evidentcard-header';  // Default class for the header
       }
-    }
+    });
 
-    // Append the structured card to the <ul>
-    ul.append(li);
+    // Append the structured card (li) to the <ul>
+    ul.appendChild(li);
   });
 
-  // Now process the links and the images to make them clickable
+  // Now process the links, images, and make the entire li clickable
   ul.querySelectorAll('li').forEach((li) => {
-    const img = li.querySelector('img');
-    const h6 = li.querySelector('h6');
     const anchor = li.querySelector('a');
-
-    if (img && anchor) {
+    const img = li.querySelector('img');
+    
+    // Check if the anchor tag exists inside the list item (li)
+    if (anchor) {
       const handleClick = () => {
-        window.location.href = anchor.href;  // Redirect to the URL from the anchor
+        // Redirect to the link in the anchor
+        window.location.href = anchor.href;
+
+        // Hide the anchor tag after click
+        anchor.style.display = 'none';
       };
 
-      // Make the image and header clickable
-      img.style.cursor = 'pointer';
-      h6.style.cursor = 'pointer';
+      // Add click event listener to the entire li (click anywhere inside)
+      li.style.cursor = 'pointer';
+      li.addEventListener('click', handleClick);
 
-      // Add click event listeners to both image and header
-      img.addEventListener('click', handleClick);
-      h6.addEventListener('click', handleClick);
+      // Make sure the image is also clickable (if an image exists)
+      if (img) {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevent li click handler from firing
+          handleClick(); // Redirect and hide anchor when image is clicked
+        });
+      }
     }
   });
 
   // Clear the existing block content and append the new <ul>
   block.textContent = '';
-  block.append(ul);
+  block.appendChild(ul);
 }
