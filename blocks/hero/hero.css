@@ -1,8 +1,9 @@
 /* Container wrapping the image and text block */
 .hero-wrapper {
-  position: relative; /* Make it possible to overlay content */
+  position: relative;
   width: 100%;
-  height: 300px; /* Define a fixed height for the hero section */
+  overflow: hidden;
+  height: 300px;
   max-width: 100%;
 }
 
