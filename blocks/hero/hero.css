@@ -16,41 +16,35 @@
 
 /* Positioning the text block on top of the image */
 .hero-wrapper > .hero > div > div:nth-of-type(2) {
-  position: absolute; /* Position it over the image */
-  top: 0%; /* Position it at the top of the container */
-  left: 0%; /* Position it at the left of the container */
-  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for text readability */
-  z-index: 2; /* Make sure it appears on top of the image */
-  padding: 25px 50px; /* Add padding around the text */
-  width: 550px; /* Width of the text block */
-  height: 190px; /* Height of the text block */
-  display: flex; /* Use flexbox to center content */
-  flex-direction: column; /* Stack the content vertically */
-  justify-content: flex-end; /* Push the content to the bottom */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Shadow around the text block */
+  position: absolute;
+  display: flex;
+  top: 0%;
+  left: 0%;
+  background-color: white;
+  z-index: 0;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: 550px;
+  height: 190px;
+  padding: 25px 50px 50px;
+  justify-content: flex-end;
 }
 
 /* Heading style inside the overlay */
 .hero-wrapper > .hero > div > div:nth-of-type(2) h1 {
-  color: #005cb9; /* Blue color for the heading */
+  color: #005cb9;
   font-size: 30px;
   line-height: 1.1em;
-  margin-top: 30px; /* Add some margin to the top */
-  margin-bottom: 20px; /* Add margin to the bottom */
-}
-
-/* Styling for <strong> inside h1 */
-.hero-wrapper > .hero > div > div:nth-of-type(2) h1 strong {
-  font-weight: bold;
-  font-size: 35px; /* Slightly larger font for bold text */
-  color: #007bff;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 /* Paragraph styling inside the overlay */
 .hero-wrapper > .hero > div > div:nth-of-type(2) p {
   font-size: 20px;
   color: black;
-  line-height: 1.8em; /* Adjust line-height for readability */
+  line-height: 1.8em;
 }
 
 /* Responsive adjustments for smaller screens */
