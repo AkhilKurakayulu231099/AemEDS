@@ -40,7 +40,11 @@
   margin-top: 30px;
   margin-bottom: 20px;
 }
-
+.hero-wrapper > .hero > div > div:nth-of-type(2) h1 strong {
+  font-weight: bold;
+  font-size: 35px; /* Slightly larger font for bold text */
+  color: #007bff;
+}
 /* Paragraph styling inside the overlay */
 .hero-wrapper > .hero > div > div:nth-of-type(2) p {
   font-size: 20px;
