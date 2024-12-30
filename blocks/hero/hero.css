@@ -1,4 +1,3 @@
-
 /* Hero Wrapper */
 .hero-wrapper {
   position: relative;
@@ -49,6 +48,21 @@
   line-height: 1.8em;
 }
 
+/* Default Content Wrapper */
+.default-content-wrapper {
+  padding: 30px;
+  font-size: 16px;
+}
+
+.default-content-wrapper h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.default-content-wrapper p {
+  margin-bottom: 15px;
+}
+
 /* Responsive Styling */
 @media (max-width: 768px) {
   /* Adjust the position and size of the text block on smaller screens */
@@ -70,5 +84,14 @@
   /* Ensure the image maintains a flexible height */
   .hero-wrapper > .hero > div > div > picture img {
     height: 200px;
+  }
+
+  /* Adjust content styling for smaller devices */
+  .default-content-wrapper h2 {
+    font-size: 20px;
+  }
+
+  .default-content-wrapper p {
+    font-size: 14px;
   }
 }
