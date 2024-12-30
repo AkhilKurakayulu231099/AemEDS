@@ -1,72 +1,76 @@
-/* Container for the hero section */
+/* Container wrapping the image and text block */
 .hero-wrapper {
-  position: relative; /* This allows absolute positioning of the text block */
+  position: relative; /* Make it possible to overlay content */
   width: 100%;
-  height: 300px; /* Define a fixed height for the hero image */
-  overflow: hidden;
+  height: 300px; /* Define a fixed height for the hero section */
+  max-width: 100%;
 }
 
-/* Image Styling inside hero-wrapper for .hero class */
-.hero-wrapper .hero > div > div > picture img {
-  width: 100%; /* Ensure the image takes up the full width */
-  height: 100%; /* Set the image height to fill the container */
+/* Ensure the image fills the container */
+.hero-wrapper > .hero > div > div > picture img {
+  width: 100%; /* Make the image take the full width */
+  height: 100%; /* Ensure the image height is 100% */
   object-fit: cover; /* Ensure the image covers the area without stretching */
-  display: block; /* Remove any extra spacing around the image */
+  display: block; /* Remove any gaps below the image */
 }
 
-/* Text block inside the .hero section, positioned over the image */
-.hero-wrapper .hero > div:nth-of-type(2) {
-  position: absolute; /* Positioned over the image */
-  top: 50%; /* Vertically center the block */
-  left: 50%; /* Horizontally center the block */
-  transform: translate(-50%, -50%); /* Adjust for true centering */
-  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background to make text readable */
-  z-index: 2; /* Ensure text is above the image */
-  padding: 20px;
-  width: 60%; /* Width of the text block */
-  text-align: center; /* Center the text inside */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Shadow to make text block stand out */
+/* Positioning the text block on top of the image */
+.hero-wrapper > .hero > div > div:nth-of-type(2) {
+  position: absolute; /* Position it over the image */
+  top: 0%; /* Position it at the top of the container */
+  left: 0%; /* Position it at the left of the container */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for text readability */
+  z-index: 2; /* Make sure it appears on top of the image */
+  padding: 25px 50px; /* Add padding around the text */
+  width: 550px; /* Width of the text block */
+  height: 190px; /* Height of the text block */
+  display: flex; /* Use flexbox to center content */
+  flex-direction: column; /* Stack the content vertically */
+  justify-content: flex-end; /* Push the content to the bottom */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Shadow around the text block */
 }
 
-/* Heading styling */
-.hero-wrapper .hero > div:nth-of-type(2) h1 {
-  color: #005cb9;
+/* Heading style inside the overlay */
+.hero-wrapper > .hero > div > div:nth-of-type(2) h1 {
+  color: #005cb9; /* Blue color for the heading */
   font-size: 30px;
-  margin: 0;
-  font-weight: normal;
+  line-height: 1.1em;
+  margin-top: 30px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add margin to the bottom */
 }
 
-/* Style the <strong> tag inside h1 */
-.hero-wrapper .hero > div:nth-of-type(2) h1 strong {
+/* Styling for <strong> inside h1 */
+.hero-wrapper > .hero > div > div:nth-of-type(2) h1 strong {
   font-weight: bold;
-  font-size: 35px; /* Slightly larger size for strong text */
+  font-size: 35px; /* Slightly larger font for bold text */
   color: #007bff;
 }
 
-/* Paragraph styling */
-.hero-wrapper .hero > div:nth-of-type(2) p {
+/* Paragraph styling inside the overlay */
+.hero-wrapper > .hero > div > div:nth-of-type(2) p {
+  font-size: 20px;
   color: black;
-  font-size: 18px;
-  line-height: 1.6em;
+  line-height: 1.8em; /* Adjust line-height for readability */
 }
 
-/* Ensure proper responsive behavior */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  .hero-wrapper .hero > div:nth-of-type(2) {
-    width: 80%; /* Make the text block smaller on smaller screens */
-    left: 10%;
+  .hero-wrapper > .hero > div > div:nth-of-type(2) {
+    width: 80%; /* Adjust width on smaller screens */
+    left: 10%; /* Adjust position */
     padding: 15px;
   }
 
-  .hero-wrapper .hero > div:nth-of-type(2) h1 {
-    font-size: 24px; /* Smaller font size for headings */
+  .hero-wrapper > .hero > div > div:nth-of-type(2) h1 {
+    font-size: 24px; /* Reduce heading size on mobile */
   }
 
-  .hero-wrapper .hero > div:nth-of-type(2) p {
-    font-size: 16px; /* Smaller font size for paragraphs */
+  .hero-wrapper > .hero > div > div:nth-of-type(2) p {
+    font-size: 16px; /* Reduce paragraph size on mobile */
   }
 
-  .hero-wrapper .hero > div > div > picture img {
-    height: 200px; /* Adjust image height on smaller screens */
+  /* Adjust image height for smaller screens */
+  .hero-wrapper > .hero > div > div > picture img {
+    height: 200px;
   }
 }
