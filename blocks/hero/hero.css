@@ -1,106 +1,72 @@
-/* Ensure the hero-wrapper container occupies the full width and height of the screen */
+/* Container for the hero section */
 .hero-wrapper {
-  position: relative;
+  position: relative; /* This allows absolute positioning of the text block */
   width: 100%;
+  height: 300px; /* Define a fixed height for the hero image */
   overflow: hidden;
-  height: 300px; /* Set a fixed height for the hero section */
-  max-width: 100%;
 }
 
 /* Image Styling inside hero-wrapper for .hero class */
 .hero-wrapper .hero > div > div > picture img {
-  width: 100%; /* Make sure image takes up the entire width */
-  height: 300px; /* Set the image to fit the container height */
-  object-fit: cover; /* Ensure the image covers the entire area */
-  display: block; /* Remove any unnecessary inline-block spacing */
+  width: 100%; /* Ensure the image takes up the full width */
+  height: 100%; /* Set the image height to fill the container */
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+  display: block; /* Remove any extra spacing around the image */
 }
 
-/* Text container styling (positioned over image) inside .hero class */
+/* Text block inside the .hero section, positioned over the image */
 .hero-wrapper .hero > div:nth-of-type(2) {
-  position: absolute; /* Positioning the text over the image */
-  top: 50%; /* Align to vertical center */
-  left: 50%; /* Align to horizontal center */
-  transform: translate(-50%, -50%); /* Adjust to truly center the content */
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background to make text readable */
-  z-index: 2; /* Ensure the text block appears above the image */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Shadow effect for text block */
-  font-size: 20px;
-  width: 60%; /* Control width of the text box */
-  max-width: 550px; /* Limit maximum width */
+  position: absolute; /* Positioned over the image */
+  top: 50%; /* Vertically center the block */
+  left: 50%; /* Horizontally center the block */
+  transform: translate(-50%, -50%); /* Adjust for true centering */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background to make text readable */
+  z-index: 2; /* Ensure text is above the image */
   padding: 20px;
-  text-align: center; /* Center-align text inside the box */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Align text inside the block */
+  width: 60%; /* Width of the text block */
+  text-align: center; /* Center the text inside */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Shadow to make text block stand out */
 }
 
-/* Styling for the heading inside the text block in .hero */
+/* Heading styling */
 .hero-wrapper .hero > div:nth-of-type(2) h1 {
-  color: #005cb9; /* Blue color for the heading */
+  color: #005cb9;
   font-size: 30px;
-  line-height: 1.1em;
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin: 0;
+  font-weight: normal;
 }
 
-/* Apply styles specifically to the <strong> inside <h1> */
+/* Style the <strong> tag inside h1 */
 .hero-wrapper .hero > div:nth-of-type(2) h1 strong {
   font-weight: bold;
-  font-size: 35px; /* Adjust if you want the strong text bigger */
-  color: #007bff; /* You can change the color of the <strong> text to make it stand out */
+  font-size: 35px; /* Slightly larger size for strong text */
+  color: #007bff;
 }
 
-/* Styling for the paragraph inside the text block */
+/* Paragraph styling */
 .hero-wrapper .hero > div:nth-of-type(2) p {
-  font-size: 20px;
   color: black;
-  line-height: 1.8em;
+  font-size: 18px;
+  line-height: 1.6em;
 }
 
-/* Default content styling */
-.default-content-wrapper {
-  padding: 30px;
-  font-size: 16px;
-}
-
-.default-content-wrapper h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.default-content-wrapper p {
-  margin-bottom: 15px;
-}
-
-/* Responsive design adjustments for smaller screens */
+/* Ensure proper responsive behavior */
 @media (max-width: 768px) {
-  /* Adjust text block size and position */
   .hero-wrapper .hero > div:nth-of-type(2) {
-    width: 80%;
+    width: 80%; /* Make the text block smaller on smaller screens */
     left: 10%;
     padding: 15px;
   }
 
-  /* Adjust heading and paragraph sizes */
   .hero-wrapper .hero > div:nth-of-type(2) h1 {
-    font-size: 20px;
+    font-size: 24px; /* Smaller font size for headings */
   }
 
   .hero-wrapper .hero > div:nth-of-type(2) p {
-    font-size: 14px;
+    font-size: 16px; /* Smaller font size for paragraphs */
   }
 
-  /* Make sure the image fits the screen */
   .hero-wrapper .hero > div > div > picture img {
-    height: 200px;
-  }
-
-  /* Adjust the content text on smaller devices */
-  .default-content-wrapper h2 {
-    font-size: 20px;
-  }
-
-  .default-content-wrapper p {
-    font-size: 14px;
+    height: 200px; /* Adjust image height on smaller screens */
   }
 }
