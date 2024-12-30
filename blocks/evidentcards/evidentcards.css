@@ -100,7 +100,7 @@
 .evidentcards {
   width: 100%; /* Full width */
   max-width: 1270px; /* Set a max-width for larger screens */
-  padding: 20px;
+  /*padding: 20px;*/
   margin-left: auto;
   margin-right: auto;
   display: flex;
