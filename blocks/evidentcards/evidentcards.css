@@ -7,6 +7,9 @@
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
   grid-gap: 24px; /* Space between the cards */
 }
+.evidentcards > p a {
+  display: none;
+}
 /* Styling for each individual card */
 .evidentcards > ul > li {
   border: 1px solid #dadada;
