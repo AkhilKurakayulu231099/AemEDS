@@ -32,6 +32,11 @@ export default function decorate(block) {
     const img = li.querySelector('img');
     const p = li.querySelector('p'); // Select <p> inside the list item
 
+    // Hide the <p> tag from the start and ensure it remains hidden
+    if (p) {
+      p.style.display = 'none';
+    }
+
     // Check if the anchor tag exists inside the list item (li)
     if (anchor) {
       const handleClick = () => {
@@ -40,11 +45,6 @@ export default function decorate(block) {
 
         // Hide the anchor tag after click
         anchor.style.display = 'none';
-        
-        // Hide the <p> tag after click (if exists)
-        if (p) {
-          p.style.display = 'none';
-        }
       };
 
       // Add click event listener to the entire li (click anywhere inside)
@@ -56,7 +56,7 @@ export default function decorate(block) {
         img.style.cursor = 'pointer';
         img.addEventListener('click', (e) => {
           e.stopPropagation(); // Prevent li click handler from firing
-          handleClick(); // Redirect and hide anchor and <p> when image is clicked
+          handleClick(); // Redirect and hide anchor when image is clicked
         });
       }
     }
