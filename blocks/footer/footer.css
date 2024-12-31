@@ -19,6 +19,17 @@ footer .footer p {
   line-height: 1.8em;
 }
 
+footer .footer p a {
+  margin-right: 10px; /* Adjust the value to your preference */
+  text-decoration: none; /* Optional: Remove underline */
+  color: #000000; /* Optional: Set link color */
+}
+
+/* Optional: Remove margin-right from last link to avoid extra space at the end */
+footer .footer p a:last-child {
+  margin-right: 0;
+}
+
 .footer ul {
     display: flex;
     justify-content: center; /* Center the items horizontally */
