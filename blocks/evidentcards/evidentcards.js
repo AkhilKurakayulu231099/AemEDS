@@ -37,7 +37,7 @@ export default function decorate(block) {
       if (p.querySelector('strong')) {
         p.style.display = 'block';  // Keep visible if it contains <strong>
       } else {
-        p.style.display = 'none';   // Hide the <p> if it doesn't contain <strong>
+        p.style.display = 'none';   // Completely hide the <p> if it doesn't contain <strong>
       }
     }
 
