@@ -7,9 +7,6 @@
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
   grid-gap: 24px; /* Space between the cards */
 }
-.evidentcards > p a {
-  display: none;
-}
 /* Styling for each individual card */
 .evidentcards > ul > li {
   border: 1px solid #dadada;
@@ -80,7 +77,7 @@
 /* Make the link text invisible but still clickable */
 .evidentcards .evidentcard-body a {
   text-decoration: none;
-  color: transparent; /* Hide the link text */
+  display: none;
   pointer-events: none; /* Disable clicking the link directly */
 }
 
