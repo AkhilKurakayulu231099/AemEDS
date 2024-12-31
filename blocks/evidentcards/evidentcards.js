@@ -32,9 +32,13 @@ export default function decorate(block) {
     const img = li.querySelector('img');
     const p = li.querySelector('p'); // Select <p> inside the list item
 
-    // Hide the <p> tag from the start and ensure it remains hidden
+    // If the <p> contains a <strong>, make it visible, otherwise hide it
     if (p) {
-      p.style.display = 'none';
+      if (p.querySelector('strong')) {
+        p.style.display = 'block';  // Keep visible if it contains <strong>
+      } else {
+        p.style.display = 'none';   // Hide the <p> if it doesn't contain <strong>
+      }
     }
 
     // Check if the anchor tag exists inside the list item (li)
