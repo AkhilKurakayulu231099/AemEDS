@@ -7,6 +7,7 @@
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
   grid-gap: 24px; /* Space between the cards */
 }
+
 /* Styling for each individual card */
 .evidentcards > ul > li {
   border: 1px solid #dadada;
@@ -35,7 +36,7 @@
   border: none; /* Remove any default border around the image */
 }
 
-/* Add arrow before the text in the header */
+/* Add arrow before the text in the header with borders */
 .evidentcards .evidentcard-header {
   padding: 0px 10px 7px;
   font-size: 1.15rem;
@@ -46,12 +47,16 @@
   transition: color 0.3s ease;
 }
 
-/* Arrow symbol before text */
+/* Arrow symbol before text with borders */
 .evidentcards .evidentcard-header::before {
-  content: '→'; /* Arrow symbol */
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent; /* Transparent left border */
+  border-right: 3px solid transparent; /* Transparent right border */
+  border-top: 3px solid #005cb9; /* Blue top border forms the arrow */
   margin-right: 8px; /* Space between the arrow and the text */
-  color: black; /* Initial color of the arrow */
-  font-size: 1.25rem;
 }
 
 /* Hover effect for the header text and arrow */
@@ -61,7 +66,7 @@
 
 /* Hover effect for the arrow inside the header */
 .evidentcards .evidentcard-header:hover::before {
-  color: blue; /* Turn the arrow blue when hovered */
+  border-top-color: blue; /* Turn the arrow blue when hovered */
 }
 
 /* Hover effect for the image */
