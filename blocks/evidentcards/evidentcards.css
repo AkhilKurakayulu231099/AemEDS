@@ -43,14 +43,15 @@
   font-weight: bold;
   color: black;
   display: flex;
-  align-items: center;
+  align-items: center; /* Aligns the arrow and text vertically */
   transition: color 0.3s ease;
+  position: relative;
 }
 
 /* Arrow symbol before text with borders */
 .evidentcards .evidentcard-header::before {
     content: "";
-    margin: 0 15px 0 0;
+    margin: 0 8px 0 0; /* Adjust the space between the arrow and the text */
     display: inline-block;
     width: 12px;
     height: 12px;
@@ -58,6 +59,7 @@
     border-right: 3px solid #005cb9;
     transition: all 0.3s;
     transform: rotate(45deg) translate(0px, 0px);
+    position: relative;
 }
 
 /* Hover effect for the header text and arrow */
@@ -68,6 +70,7 @@
 /* Hover effect for the arrow inside the header */
 .evidentcards .evidentcard-header:hover::before {
   border-top-color: blue; /* Turn the arrow blue when hovered */
+  transform: rotate(45deg) translate(4px, 0px); /* Move the arrow slightly towards the text */
 }
 
 /* Hover effect for the image */
