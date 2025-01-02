@@ -38,7 +38,7 @@
 /* Add arrow before the text in the header */
 .evidentcards .evidentcard-header {
   padding: 0px 10px 7px;
-  font-size: 1.0rem;
+  font-size: 1.15rem;
   font-weight: bold;
   color: black;
   display: flex;
