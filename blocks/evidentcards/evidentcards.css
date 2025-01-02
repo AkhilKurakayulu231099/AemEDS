@@ -49,14 +49,15 @@
 
 /* Arrow symbol before text with borders */
 .evidentcards .evidentcard-header::before {
-  content: '';
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 3px solid transparent; /* Transparent left border */
-  border-right: 3px solid transparent; /* Transparent right border */
-  border-top: 3px solid #005cb9; /* Blue top border forms the arrow */
-  margin-right: 8px; /* Space between the arrow and the text */
+    content: "";
+    margin: 0 15px 0 0;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #005cb9;
+    border-right: 3px solid #005cb9;
+    transition: all 0.3s;
+    transform: rotate(45deg) translate(0px, 0px);
 }
 
 /* Hover effect for the header text and arrow */
