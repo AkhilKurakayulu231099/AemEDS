@@ -58,9 +58,9 @@
   border-top: 3px solid #005cb9;
   border-right: 3px solid #005cb9;
   transition: all 0.3s ease;
-  transform: rotate(45deg) translate(0px, 0px);
+  transform: rotate(45deg); /* Ensure the arrow points correctly */
   position: relative;
-  top: 0px; /* Ensure the arrow is inline with the text */
+  top: 0px; /* Align the arrow with the text */
 }
 
 /* Hover effect for the header text and arrow */
@@ -107,6 +107,12 @@
 .evidentcards > ul > li:hover img {
   transform: scale(1.1); /* Slightly scale the image */
   transition: transform 0.3s ease; /* Ensure smooth transition */
+}
+
+/* Ensure arrow transitions when image is hovered */
+.evidentcards > ul > li:hover .evidentcard-header::before {
+  transform: rotate(45deg) translate(4px, 0px); /* Move the arrow slightly towards the text */
+  border-top-color: blue; /* Turn the arrow blue when hovered */
 }
 
 .evidentcards {
