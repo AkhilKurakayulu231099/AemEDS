@@ -50,16 +50,17 @@
 
 /* Arrow symbol before text with borders */
 .evidentcards .evidentcard-header::before {
-    content: "";
-    margin: 0 8px 0 0; /* Adjust the space between the arrow and the text */
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-top: 3px solid #005cb9;
-    border-right: 3px solid #005cb9;
-    transition: all 0.3s;
-    transform: rotate(45deg) translate(0px, 0px);
-    position: relative;
+  content: "";
+  margin: 0 10px 0 0; /* Adjust the space between the arrow and the text */
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid #005cb9;
+  border-right: 3px solid #005cb9;
+  transition: all 0.3s;
+  transform: rotate(45deg) translate(0px, 0px);
+  position: relative;
+  top: 2px; /* Fine-tune to ensure the tip of the arrow aligns with the text */
 }
 
 /* Hover effect for the header text and arrow */
